@@ -1,0 +1,60 @@
+#search and replace a string in file
+
+with open("/home/sailaja/log3.txt","r") as fd:
+	fileread=fd.read()
+
+fileread=fileread.replace("sai","sailu")
+
+with open("/home/sailaja/log3.txt","w") as fd:
+	fd.write(fileread)
+
+
+
+
+example code:
+with open("/home/sailaja/Documents/sample_try/dumpsys.txt","r") as rd:
+    filerd=rd.read()
+
+filerd=filerd.replace("fetch_dumpsys_text","fetch")
+
+with open("/home/sailaja/Documents/sample_try/dumpsys.txt","w") as rd:
+    rd.write(filerd)
+
+
+
+
+
+
+
+#search,reverse and replace of string 
+with open("/home/sailaja/log3.txt","r") as fd:
+	fileread=fd.read()
+
+str="sai"
+fileread=fileread.replace(str,str[::-1])
+
+with open("/home/sailaja/log3.txt","w") as fd:
+	fd.write(fileread)
+
+
+file modules:
+******import fileinput
+ fileinput.filename()
+ fileinput.fileno()
+ fileinput.filelineno()
+
+
+******import filecmp
+filecmp.cmp(f1, f2)
+filecmp.cmpfiles(dir1, dir2)
+
+
+******from filecmp import dircmp
+
+
+
+
+
+
+
+
