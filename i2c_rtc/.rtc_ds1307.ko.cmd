@@ -1,0 +1,1 @@
+cmd_/home/venkata/i2c_rtc/rtc_ds1307.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/venkata/i2c_rtc/rtc_ds1307.ko /home/venkata/i2c_rtc/rtc_ds1307.o /home/venkata/i2c_rtc/rtc_ds1307.mod.o ;  true
