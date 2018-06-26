@@ -1,0 +1,316 @@
+Implimenting FT5406DQ9 Touchscreen controller Driver on Raspberry pi 3
+--------------------------------------------------------------------
+	2018-April Tatikonda Venkatarao<t.venkatarao@globaledgesoft.com>
+
+
+Introduction
+-------------
+
+This document describes the FT5406 touchsreen controller which allows 
+kernel drivers to report details for an arbitrary number of contacts.
+
+
+Raspberry pi 3
+---------------
+
+The Raspberry Pi display is an LCD display which connects to the Raspberry Pi
+through the DSI connector. In some situations, it allows for the use of both 
+the HDMI and LCD displays at the same time (this requires software support).
+
+The DSI connector on the Model A/B boards does not have the I2C connections 
+required to talk to the touchscreen controller and DSI controller.
+
+
+FT5406DQ9
+---------
+
+The FT5x06 Series ICs are single-chip capacitive touch panel controller 
+ICs with a built-in 8 bit Micro-controller unit (MCU).They adopt the 
+mutual capacitance approach, which supports true multi-touch capability.
+
+Some features:
+* Mutual Capacitive Sensing Techniques
+* True Multi-touch with up to 10 Points of Absolution X and Y Coordinates.
+* Immune to RF Interferences
+* Auto-calibration:Insensitive to Capacitance and Environ-mental Variations
+* Supports up to 26 Transmit Lines and 16 Receive Lines
+* Supports up to 8” Touch Screen.
+
+External Interface:
+* I2C/SPI: an interface for data exchange with host
+* INT: an interrupt signal to inform the host processor that touch data 
+* is ready for read
+* WAKE: an interrupt signal for the host to change FT5x06 from Hibernate 
+* to Active mode
+* /RST: an external low signal reset the chip
+
+
+Raspberry pi 7" Multitouch Display
+----------------------------------
+
+In this build, we're using the official 7” multitouch display from the 
+Raspberry Pi foundation. It features a beautiful IPS display and includes 
+the drivers to work on a Raspberry Pi 3.
+
+
+DSI(Display serieal Interface)
+--------------------------------
+
+DSI (Display serial interface) is a high-speed serial interface based 
+on a number of (1GBits) data lanes.
+
+Input subsysteam
+-----------------
+
+The input subsystem is the part of the Linux kernel that manages the 
+various input devices that a user uses to interact with the kernel, 
+command line and graphical user interface.
+Examples:-
+	1.Keyboards
+	2.Mice
+	3.Joysticks
+	4.Touch Screens 
+
+This subsystem is part of the kernel because these devices usually are 
+accessed through special hardware interfaces (such as serial ports,PS/2,
+SPI, I2C and USB), which are protected and managed by the kernel itself. 
+
+	---------------------------------------------------------
+	| Event Type   	| Comment             	|    Example	|
+	|---------------|-----------------------|---------------|
+	|  EV_ABS	| Absolute Axis Events	|  Touch Screen	| 
+	--------------------------------------------------------- 
+
+The event interface allows you to query which features and capabilities 
+are available for a particular device. The types of events supported by
+the event interface are: 
+
+A wide range of individual codes can be found within each event type. 
+For example, the EV_ABS specifies codes to distinguishes between ABS_X, 
+ABS_Y and ABS_Z axes and ABS_PRESSURE and many more. Similarly, the 
+EV_KEY feature type includes literally hundreds of different key and 
+button codes.           	     
+	
+The three major elements of the input subsystem are:
+1.Input Core
+2.Event Handlers
+3.Input Device Drivers
+
+Note that while the normal path is from low-level hardware to drivers, 
+drivers to input core, input core to handler and handler to user space, 
+there usually is a return path as well.
+
+This return path allows for such things as setting the LEDs on a keyboard 
+and providing motion commands to force feedback joysticks.
+
+The code work flow of input devices:-
+
+                          --------      ----------------------  
+                          |   Qt |      |  Custom Application |
+	                  --------      -----------------------
+                               ^          ^
+                               |          |
+                           ---------------------
+                           |    dev/input/***  |
+                           ---------------------
+ user space                ^  
+__________________________/______________________________________
+            _____________/_ 
+            | input event |
+            |  Handler    |
+           ________________
+                  |
+                  ^
+                  |
+	  --------------			
+          | input core |
+     	  --------------
+                |
+                ^
+                |
+       -----------------
+       |    input      |
+       | device driver |
+       -----------------
+                  \
+ kernel space      ^
+____________________\____________________________________________
+ hardware	     \	        
+		----------------
+		| Touch screen |
+                ----------------
+
+
+
+Multi-Point versus Multi-Touch
+-------------------------------
+
+single-point: 
+single-point interaction. One x/y coordinate, button/key state. 
+
+single-touch: 
+not a single point, but a single area. touching with a thumb is 
+different than touching with a stylus. Touch screens that only do
+single point interaction are technically no different than a mouse. 
+
+multi-point: 
+multiple points of interaction. 
+
+multi-touch: 
+multiple separate input contact areas.
+
+
+Event Semantics
+-----------------
+
+The word "contact" is used to describe a tool which is in direct 
+contact with the surface. A finger or a pen all classify as contacts.
+
+ABS_MT_TOUCH_MAJOR:
+The length of the major axis of the contact. The length should be given 
+in surface units. If the surface has an X times Y resolution, the largest 
+possible value of ABS_MT_TOUCH_MAJOR is sqrt(X^2 + Y^2), the diagonal.
+
+ABS_MT_TOUCH_MINOR:
+The length, in surface units, of the minor axis of the contact. If the 
+contact is circular, this event can be omitted.
+
+ABS_MT_WIDTH_MAJOR:
+The length, in surface units, of the major axis of the approaching tool. 
+This should be understood as the size of the tool itself. The orientation 
+of the contact and the approaching tool are assumed to be the same.
+
+ABS_MT_WIDTH_MINOR:
+The length, in surface units, of the minor axis of the approaching tool. 
+Omit if circular.
+
+ABS_MT_PRESSURE:
+The pressure, in arbitrary units, on the contact area. May be used instead 
+of TOUCH and WIDTH for pressure-based devices or any device with a spatial 
+signal intensity distribution.
+
+ABS_MT_POSITION_X:
+The surface X coordinate of the center of the touching ellipse.
+
+ABS_MT_POSITION_Y:
+The surface Y coordinate of the center of the touching ellipse.
+
+ABS_MT_TOOL_TYPE:
+The type of approaching tool. 
+The protocol currently supports:
+MT_TOOL_FINGER 
+MT_TOOL_PEN
+A lot of kernel drivers cannot distinguish between different tool types, 
+such as a finger or a pen. In such cases, the event should be omitted. 
+
+ABS_MT_BLOB_ID:
+The BLOB_ID groups several packets together into one arbitrarily shaped 
+contact. This is a low-level anonymous grouping, and should not be 
+confused with the high-level trackingID.
+Most kernel drivers will not have blob capability, and can safely omit the 
+event.
+
+ABS_MT_TRACKING_ID
+The TRACKING_ID identifies an initiated contact throughout its life cycle.
+There are currently only a few devices that support it, so this event should 
+normally be omitted.
+
+
+Event Computation
+------------------
+
+The diversity of different hardware unavoidably leads to some devices fitting
+better to the MT protocol than others. To simplify
+and unify the mapping, this section gives recipes for how to
+compute certain events.
+For devices reporting contacts as rectangular shapes, signed orientation cannot
+be obtained. Assuming X and Y are the lengths of the sides of the touching 
+rectangle, here is a simple formula that retains the most information possible:
+   ABS_MT_TOUCH_MAJOR := max(X, Y)
+   ABS_MT_TOUCH_MINOR := min(X, Y)
+   ABS_MT_ORIENTATION := bool(X > Y)
+The range of ABS_MT_ORIENTATION should be set to [0, 1], to indicate that the 
+device can distinguish between a finger along the Y axis (0) and a finger 
+along the X axis (1).
+
+
+Finger Tracking
+----------------
+
+The kernel driver should generate an arbitrary enumeration of the set of 
+anonymous contacts currently on the surface. The order in which the packets 
+appear in the event stream is not important.
+
+The process of finger tracking, i.e., to assign a unique trackingID to each 
+initiated contact on the surface, is left to user space; preferably the 
+multi-touch X driver. In that driver, the trackingID stays the same and unique 
+until the contact vanishes (when the finger leaves the surface). The problem of 
+assigning a set of anonymous fingers to a set of identified fingers is a euclidian
+bipartite matching problem at each event update, and relies on a sufficiently 
+rapid update rate.
+
+There are a few devices that support trackingID in hardware. User space can 
+make use of these native identifiers to reduce bandwidth and cpu usage.
+
+
+Calibrations
+--------------
+
+Touch screens are finding their way into a variety of embedded products. 
+Most touch-enabled devices will require a calibration routine. Here's 
+a good one. 
+
+Understanding Image Transformation: Translation, Rotation, and Scaling:
+
+Figure 1 is an exaggerated view of the distortion that might happen to
+a circle being displayed on an LCD touch-screen display. When a finger 
+is traced around the circle (red line), the touch-panel system may give 
+out the coordinates of an ellipse (blue line) instead of the circle, shown 
+below in Figure 1. This change of the shape from a circle to an ellipse 
+can be explained by the following graphic transformations: translation, 
+rotation, and scaling.
+
+Intuition suggests that any coordinate point x, y in an x-y plane that has
+undergone a transformation should look like:
+
+xNEW = f1(xOLD, yOLD) + constant1 	(Eq. 1a)
+yNEW = f2(xOLD, yOLD) + constant2 	(Eq. 1b)
+
+Where xNEW and yNEW are the transformed coordinates; xOLD and yOLD are the 
+old coordinates; f1() and f2() are functions that transform the old coordinates; 
+constants1 and 2 are just that, constants.
+If the transformation is linear, then functions f1() and f2() can be replaced 
+by the following equations:
+
+xNEW = A xOLD + B yOLD + C 	(Eq. 2a)
+yNEW = D xOLD + E yOLD + F 	(Eq. 2b)
+
+Where A, B, C, D, E, and F are constant coefficients.
+Note that f1() = A xOLD +B yOLD and f2() = D xOLD + E yOLD, where constant1 and 
+constant2 are C and F, respectively.
+
+API's 
+------
+
+Name:
+input_mt_report_slot_state — report contact state
+
+Synopsis:
+void input_mt_report_slot_state (	struct input_dev * dev,
+ 	unsigned int tool_type,
+ 	bool active);
+ 
+Arguments:
+
+dev -> input device with allocated MT slots 
+tool_type -> the tool type to use in this slot 
+active -> true if contact is active, false otherwise 
+
+Description:
+
+Reports a contact via ABS_MT_TRACKING_ID, and optionally ABS_MT_TOOL_TYPE.
+If active is true and the slot is currently inactive, or if the tool type 
+is changed, a new tracking id is assigned to the slot. The tool type is 
+only reported if the corresponding absbit field is set. 
+
+
