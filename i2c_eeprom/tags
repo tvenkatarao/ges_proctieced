@@ -1,0 +1,133 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+FILE_NAME	app/i2c_eeprom_app.c	12;"	d	file:
+FILE_NAME	app/i2c_eeprom_app2.c	12;"	d	file:
+FILE_NAME	app/i2c_eeprom_appioctl.c	13;"	d	file:
+FILE_NAME	narasimha/ee_app.c	12;"	d	file:
+KDIR	app/Makefile	/^KDIR:=\/home\/venkata\/raspi\/linux$/;"	m
+KDIR	driver/Makefile	/^KDIR:=\/home\/venkata\/raspi\/linux$/;"	m
+KDIR	driver2/Makefile	/^KDIR:=\/home\/venkata\/raspi\/linux$/;"	m
+KDIR	driver3/Makefile	/^KDIR:=\/home\/venkata\/raspi\/linux$/;"	m
+KDIR	narasimha/Makefile	/^KDIR:=\/home\/venkata\/raspi\/linux$/;"	m
+PWD	app/Makefile	/^PWD:=$(shell pwd)$/;"	m
+PWD	driver/Makefile	/^PWD:=$(shell pwd)$/;"	m
+PWD	driver2/Makefile	/^PWD:=$(shell pwd)$/;"	m
+PWD	driver3/Makefile	/^PWD:=$(shell pwd)$/;"	m
+PWD	narasimha/Makefile	/^PWD:=$(shell pwd)$/;"	m
+__this_module	driver/i2c_eeprom.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	driver2/i2c_eeprom2.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	driver3/i2c_eeprom3.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__this_module	narasimha/ee_driver.mod.c	/^__visible struct module __this_module$/;"	v	typeref:struct:module
+__used	driver/i2c_eeprom.mod.c	/^__used$/;"	v	file:
+__used	driver/i2c_eeprom.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	driver2/i2c_eeprom2.mod.c	/^__used$/;"	v	file:
+__used	driver2/i2c_eeprom2.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	driver3/i2c_eeprom3.mod.c	/^__used$/;"	v	file:
+__used	driver3/i2c_eeprom3.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+__used	narasimha/ee_driver.mod.c	/^__used$/;"	v	file:
+__used	narasimha/ee_driver.mod.c	/^__used$/;"	v	typeref:struct:____versions	file:
+cdev	driver/i2c_eeprom.c	/^	struct cdev cdev;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::cdev	file:
+cdev	driver2/i2c_eeprom2.c	/^	struct cdev cdev;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::cdev	file:
+cdev	driver3/i2c_eeprom3.c	/^	struct cdev cdev;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::cdev	file:
+cdev	narasimha/ee_driver.c	/^	struct cdev cdev;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::cdev	file:
+class	driver/i2c_eeprom.c	/^	struct class *class;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::class	file:
+class	driver2/i2c_eeprom2.c	/^	struct class *class;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::class	file:
+class	driver3/i2c_eeprom3.c	/^	struct class *class;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::class	file:
+class	narasimha/ee_driver.c	/^	struct class *class;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::class	file:
+client	driver/i2c_eeprom.c	/^	struct i2c_client *client;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::i2c_client	file:
+client	driver2/i2c_eeprom2.c	/^	struct i2c_client *client;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::i2c_client	file:
+client	driver3/i2c_eeprom3.c	/^	struct i2c_client *client;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::i2c_client	file:
+client	narasimha/ee_driver.c	/^	struct i2c_client *client;$/;"	m	struct:eeprom_data	typeref:struct:eeprom_data::i2c_client	file:
+devname	driver/i2c_eeprom.c	224;"	d	file:
+devname	driver/i2c_eeprom.c	23;"	d	file:
+devname	driver2/i2c_eeprom2.c	24;"	d	file:
+devname	driver3/i2c_eeprom3.c	24;"	d	file:
+devname	narasimha/ee_driver.c	24;"	d	file:
+devt	driver/i2c_eeprom.c	/^	dev_t devt;$/;"	m	struct:eeprom_data	file:
+devt	driver2/i2c_eeprom2.c	/^	dev_t devt;$/;"	m	struct:eeprom_data	file:
+devt	driver3/i2c_eeprom3.c	/^	dev_t devt;$/;"	m	struct:eeprom_data	file:
+devt	narasimha/ee_driver.c	/^	dev_t devt;$/;"	m	struct:eeprom_data	file:
+eeprom_close	driver/i2c_eeprom.c	/^static int eeprom_close(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_close	driver2/i2c_eeprom2.c	/^static int eeprom_close(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_close	driver3/i2c_eeprom3.c	/^static int eeprom_close(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_close	narasimha/ee_driver.c	/^static int eeprom_close(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_data	driver/i2c_eeprom.c	/^struct eeprom_data {$/;"	s	file:
+eeprom_data	driver2/i2c_eeprom2.c	/^struct eeprom_data {$/;"	s	file:
+eeprom_data	driver3/i2c_eeprom3.c	/^struct eeprom_data {$/;"	s	file:
+eeprom_data	narasimha/ee_driver.c	/^struct eeprom_data {$/;"	s	file:
+eeprom_driver	driver/i2c_eeprom.c	/^static struct i2c_driver eeprom_driver = {$/;"	v	typeref:struct:i2c_driver	file:
+eeprom_driver	driver2/i2c_eeprom2.c	/^static struct i2c_driver eeprom_driver = {$/;"	v	typeref:struct:i2c_driver	file:
+eeprom_driver	driver3/i2c_eeprom3.c	/^static struct i2c_driver eeprom_driver = {$/;"	v	typeref:struct:i2c_driver	file:
+eeprom_driver	narasimha/ee_driver.c	/^static struct i2c_driver eeprom_driver = {$/;"	v	typeref:struct:i2c_driver	file:
+eeprom_exit	driver/i2c_eeprom.c	/^module_exit(eeprom_exit);$/;"	v
+eeprom_exit	driver/i2c_eeprom.c	/^static void __exit eeprom_exit(void)$/;"	f	file:
+eeprom_exit	driver2/i2c_eeprom2.c	/^module_exit(eeprom_exit);$/;"	v
+eeprom_exit	driver2/i2c_eeprom2.c	/^static void __exit eeprom_exit(void)$/;"	f	file:
+eeprom_exit	driver3/i2c_eeprom3.c	/^module_exit(eeprom_exit);$/;"	v
+eeprom_exit	driver3/i2c_eeprom3.c	/^static void __exit eeprom_exit(void)$/;"	f	file:
+eeprom_exit	narasimha/ee_driver.c	/^module_exit(eeprom_exit);$/;"	v
+eeprom_exit	narasimha/ee_driver.c	/^static void __exit eeprom_exit(void)$/;"	f	file:
+eeprom_ids	driver/i2c_eeprom.c	/^static const struct i2c_device_id eeprom_ids[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+eeprom_ids	driver2/i2c_eeprom2.c	/^static const struct i2c_device_id eeprom_ids[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+eeprom_ids	driver3/i2c_eeprom3.c	/^static const struct i2c_device_id eeprom_ids[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+eeprom_ids	narasimha/ee_driver.c	/^static const struct i2c_device_id eeprom_ids[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+eeprom_init	driver/i2c_eeprom.c	/^module_init(eeprom_init);$/;"	v
+eeprom_init	driver/i2c_eeprom.c	/^static int __init eeprom_init(void)$/;"	f	file:
+eeprom_init	driver2/i2c_eeprom2.c	/^module_init(eeprom_init);$/;"	v
+eeprom_init	driver2/i2c_eeprom2.c	/^static int __init eeprom_init(void)$/;"	f	file:
+eeprom_init	driver3/i2c_eeprom3.c	/^module_init(eeprom_init);$/;"	v
+eeprom_init	driver3/i2c_eeprom3.c	/^static int __init eeprom_init(void)$/;"	f	file:
+eeprom_init	narasimha/ee_driver.c	/^module_init(eeprom_init);$/;"	v
+eeprom_init	narasimha/ee_driver.c	/^static int __init eeprom_init(void)$/;"	f	file:
+eeprom_ioctl	driver2/i2c_eeprom2.c	/^static ssize_t eeprom_ioctl(struct file* file,const int cmd, size_t count, loff_t *pos , const char *buf)$/;"	f	file:
+eeprom_ioctl	driver3/i2c_eeprom3.c	/^static ssize_t eeprom_ioctl(struct file* file,const int cmd, size_t count, loff_t *pos , const char *buf)$/;"	f	file:
+eeprom_open	driver/i2c_eeprom.c	/^static int eeprom_open(struct inode *inode, struct file *f)$/;"	f	file:
+eeprom_open	driver/i2c_eeprom.c	/^static int eeprom_open(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_open	driver2/i2c_eeprom2.c	/^static int eeprom_open(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_open	driver3/i2c_eeprom3.c	/^static int eeprom_open(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_open	narasimha/ee_driver.c	/^static int eeprom_open(struct inode *inode, struct file *file)$/;"	f	file:
+eeprom_probe	driver/i2c_eeprom.c	/^static int eeprom_probe(struct i2c_client *client, const struct i2c_device_id *id)$/;"	f	file:
+eeprom_probe	driver2/i2c_eeprom2.c	/^static int eeprom_probe(struct i2c_client *client, const struct i2c_device_id *id)$/;"	f	file:
+eeprom_probe	driver3/i2c_eeprom3.c	/^static int eeprom_probe(struct i2c_client *client, const struct i2c_device_id *id)$/;"	f	file:
+eeprom_probe	narasimha/ee_driver.c	/^static int eeprom_probe(struct i2c_client *client, const struct i2c_device_id *id)$/;"	f	file:
+eeprom_read	driver/i2c_eeprom.c	/^static ssize_t eeprom_read(struct file* f, char *buf, size_t count, loff_t *f_pos)$/;"	f	file:
+eeprom_read	driver/i2c_eeprom.c	/^static ssize_t eeprom_read(struct file* file, char *buf, size_t count) $/;"	f	file:
+eeprom_read	driver2/i2c_eeprom2.c	/^static ssize_t eeprom_read(struct file* file, char *buf, size_t count, loff_t *pos) $/;"	f	file:
+eeprom_read	driver3/i2c_eeprom3.c	/^static ssize_t eeprom_read(struct file* file, char *buf, size_t count, loff_t *pos) $/;"	f	file:
+eeprom_read	narasimha/ee_driver.c	/^static ssize_t eeprom_read(struct file* file, char *buf, size_t count, loff_t *pos) $/;"	f	file:
+eeprom_reciever	driver2/i2c_eeprom2.c	/^static ssize_t eeprom_reciever(struct file* file, char *buf, size_t count, loff_t *pos) $/;"	f	file:
+eeprom_remove	driver/i2c_eeprom.c	/^static int eeprom_remove(struct i2c_client *client)$/;"	f	file:
+eeprom_remove	driver2/i2c_eeprom2.c	/^static int eeprom_remove(struct i2c_client *client)$/;"	f	file:
+eeprom_remove	driver3/i2c_eeprom3.c	/^static int eeprom_remove(struct i2c_client *client)$/;"	f	file:
+eeprom_remove	narasimha/ee_driver.c	/^static int eeprom_remove(struct i2c_client *client)$/;"	f	file:
+eeprom_transfer	driver2/i2c_eeprom2.c	/^static ssize_t eeprom_transfer(struct file* file, const char *buf, size_t count, loff_t *pos)$/;"	f	file:
+eeprom_write	driver/i2c_eeprom.c	/^static ssize_t eeprom_write(struct file* f, const char *buf, size_t count, loff_t *f_pos)$/;"	f	file:
+eeprom_write	driver/i2c_eeprom.c	/^static ssize_t eeprom_write(struct file* file, const char *buf, size_t count, loff_t *pos)$/;"	f	file:
+eeprom_write	driver2/i2c_eeprom2.c	/^static ssize_t eeprom_write(struct file* file, const char *buf, size_t count, loff_t *pos)$/;"	f	file:
+eeprom_write	driver3/i2c_eeprom3.c	/^static ssize_t eeprom_write(struct file* file, const char *buf, size_t count, loff_t *pos)$/;"	f	file:
+eeprom_write	narasimha/ee_driver.c	/^static ssize_t eeprom_write(struct file* file, const char *buf, size_t count, loff_t *pos)$/;"	f	file:
+fops	driver/i2c_eeprom.c	/^struct file_operations fops = {$/;"	v	typeref:struct:file_operations
+fops	driver2/i2c_eeprom2.c	/^struct file_operations fops = {$/;"	v	typeref:struct:file_operations
+fops	driver3/i2c_eeprom3.c	/^struct file_operations fops = {$/;"	v	typeref:struct:file_operations
+fops	narasimha/ee_driver.c	/^struct file_operations fops = {$/;"	v	typeref:struct:file_operations
+main	app/i2c_eeprom_app.c	/^int main(void) $/;"	f
+main	app/i2c_eeprom_app2.c	/^int main(void) $/;"	f
+main	app/i2c_eeprom_appioctl.c	/^int main(void) $/;"	f
+main	narasimha/ee_app.c	/^int main(void) $/;"	f
+obj-m	app/Makefile	/^obj-m:=i2c_eeprom_app.o$/;"	m
+obj-m	driver/Makefile	/^obj-m:=i2c_eeprom.o$/;"	m
+obj-m	driver2/Makefile	/^obj-m:=i2c_eeprom2.o$/;"	m
+obj-m	driver3/Makefile	/^obj-m:=i2c_eeprom3.o$/;"	m
+obj-m	narasimha/Makefile	/^obj-m:=ee_driver.o$/;"	m
+write_buff	driver/i2c_eeprom.c	/^	u8 *write_buff;$/;"	m	struct:eeprom_data	file:
+write_buff	driver2/i2c_eeprom2.c	/^	u8 *write_buff;$/;"	m	struct:eeprom_data	file:
+write_buff	driver3/i2c_eeprom3.c	/^	u8 *write_buff;$/;"	m	struct:eeprom_data	file:
+write_buff	narasimha/ee_driver.c	/^	u8 *write_buff;$/;"	m	struct:eeprom_data	file:
+write_max	driver/i2c_eeprom.c	/^	u16 write_max;$/;"	m	struct:eeprom_data	file:
+write_max	driver2/i2c_eeprom2.c	/^	u16 write_max;$/;"	m	struct:eeprom_data	file:
+write_max	driver3/i2c_eeprom3.c	/^	u16 write_max;$/;"	m	struct:eeprom_data	file:
+write_max	narasimha/ee_driver.c	/^	u16 write_max;$/;"	m	struct:eeprom_data	file:

@@ -1,0 +1,1 @@
+cmd_/home/venkata/i2c_eeprom/i2c-eeprom.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/venkata/i2c_eeprom/i2c-eeprom.ko /home/venkata/i2c_eeprom/i2c-eeprom.o /home/venkata/i2c_eeprom/i2c-eeprom.mod.o ;  true

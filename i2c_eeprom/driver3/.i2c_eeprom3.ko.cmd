@@ -1,0 +1,1 @@
+cmd_/home/venkata/i2c_eeprom/driver3/i2c_eeprom3.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/venkata/i2c_eeprom/driver3/i2c_eeprom3.ko /home/venkata/i2c_eeprom/driver3/i2c_eeprom3.o /home/venkata/i2c_eeprom/driver3/i2c_eeprom3.mod.o ;  true

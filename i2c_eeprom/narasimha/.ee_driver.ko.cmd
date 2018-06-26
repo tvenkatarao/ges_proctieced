@@ -1,0 +1,1 @@
+cmd_/home/venkata/i2c_eeprom/narasimha/ee_driver.ko := arm-linux-gnueabihf-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/venkata/i2c_eeprom/narasimha/ee_driver.ko /home/venkata/i2c_eeprom/narasimha/ee_driver.o /home/venkata/i2c_eeprom/narasimha/ee_driver.mod.o ;  true

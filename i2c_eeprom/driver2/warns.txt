@@ -1,0 +1,45 @@
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C /home/venkata/raspi/linux M=/home/venkata/i2c_eeprom/driver2 modules
+make[1]: Entering directory `/home/venkata/raspi/linux'
+  CHECK   /home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c
+failed to open: db/db.schema
+failed to open: db/caller_info.schema
+failed to open: db/return_states.schema
+failed to open: db/function_type_size.schema
+failed to open: db/type_size.schema
+failed to open: db/call_implies.schema
+failed to open: db/function_ptr.schema
+failed to open: db/local_values.schema
+failed to open: db/function_type_value.schema
+failed to open: db/type_value.schema
+failed to open: db/function_type.schema
+failed to open: db/data_info.schema
+failed to open: db/parameter_name.schema
+failed to open: db/constraints.schema
+failed to open: db/constraints_required.schema
+failed to open: db/fn_ptr_data_link.schema
+failed to open: db/fn_data_link.schema
+failed to open: db/mtag_about.schema
+failed to open: db/mtag_map.schema
+failed to open: db/mtag_data.schema
+failed to open: db/mtag_alias.schema
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:92 read_proc() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:150 eeprom_read() warn: possible memory leak of 'buf2'
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:200 eeprom_write() warn: possible memory leak of 'buf2'
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:202 eeprom_write() warn: overwrite may leak 'tmp'
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:205 eeprom_write() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:206 eeprom_write() warn: possible memory leak of 'buf2'
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:209 eeprom_write() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:213 eeprom_write() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:225 eeprom_write() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:270 eeprom_ioctl() warn: possible memory leak of 'buf2'
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:296 eeprom_ioctl() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:300 eeprom_ioctl() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:314 eeprom_ioctl() warn: if statement not indented
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:359 eeprom_ioctl() warn: maybe return -EFAULT instead of the bytes remaining?
+/home/venkata/i2c_eeprom/driver2/i2c_eeprom2.c:527 eeprom_probe() warn: proc file '"eeprom_proc"' is world writable
+  CC [M]  /home/venkata/i2c_eeprom/driver2/i2c_eeprom2.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/venkata/i2c_eeprom/driver2/i2c_eeprom2.mod.o
+  LD [M]  /home/venkata/i2c_eeprom/driver2/i2c_eeprom2.ko
+make[1]: Leaving directory `/home/venkata/raspi/linux'
