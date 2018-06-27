@@ -1,0 +1,601 @@
+		semaphore 					mutex
+
+
+basic		signalling					locking
+
+existance	integervalue					object
+
+func		it access multiple program threads		multiple threads in a process not simultaneous
+		to access finite instance of resources
+
+ownership	any process aquire and relse the resources	same mutex objct to relaese and lock
+
+categarised	count and binary				not categartised
+
+operations  	wait()->dec					count value
+		post()->inc
+
+used		can be used for process nd threds		only threads
+
+
+
+*********************************************************************
+process                               threads
+1.more memeory				->less memeory(only stcak)
+2.sharing info slow			->fast
+3.contxt swticthing(ipc)			->fast(updating issues)
+4.bug in one process cannot		->effcted
+effct other
+5.more cpu time				->less cpu
+
+******************************************************************
+pipe			fifo					msq queues
+
+1.related proesss	unrealted
+2.file system		kernel
+3.shutown lost data	data stored				fulld uplex
+4.read nd write		open,read.				msgrcv,msgsnd
+5.			stream based				packet based	
+6			word by word				total string
+			half duplex
+
+*******************************************************************************
+basic i/o calls					standars
+1.universal calls				buffered calls
+2.operates on fd				opetres on file pointers
+3.used to snd request to kernel.		used basic i/o calls internall
+4.opertes on normal fies,device files etc	normal file
+
+********************************************************************************
+fork						vfork
+1.only reads data				read and writes
+2.no wite on copy tech				write on copy tech used
+3.two user and two pcbs				two user and one pcb
+*****************************************************************************
+
+
+
+
+	i2c                                     spi
+	ack					no ack
+	fullduplex				half duplex
+	less speed 5 mbps			more speed 10 mbps
+	less hardware				more
+	multi master and multislave		singnle master and multi slave
+	no of bits limited(8)			no limit 
+
+
+*****************************************************************************************
+
+storage classes:
+
+		varibales	segmnt 		lifetim 	krywork 	inival		scope
+auto 		local		stack		func invo and	auto 		garbage		func
+
+
+
+
+global		global		bss,data	thruh fuc	--		zeros		program
+
+ststic		loclnd glbl	dats bss stack	"  "		static 		zeros		file
+
+register	cpu						register	--		 block
+
+
+
+*******************************************************************************************
+txt,data,bss ,heap and stck
+txt:insructiond for mul fuvc
+dats:global initialed
+bss:uninitialesed
+heap:dma(calloc,malloc and relloc)
+stack:loacl var,linkage info,function argumnts
+
+
+****************************************************************************
+
+
+user					kernel
+main					multiple
+function execution stop			wait for h/w,external or driver
+predefined printf			varlog/sys/log
+
+************************************************************
+macros:                             inline:
+1.substituion of defination           1.it is a defination
+2.interpretation performed in         2.preprocessor stage
+compler
+3.scope rule		 	      3.no scope rule
+4.limited to given symbolic names     4.values
+to types only
+********************************************************
+
+
+
+
+
+makemenu config->tke i/p from kconfig and reate .config
+make->* creates kernrl
+make module->mosule cretes
+make install->grub updation and new kernel /boot
+make module_install->path */lib/kernla name
+
+*********************************************************************
+pipes
+fifos
+msgques
+semaphors
+shared memeory
+virtual memory
+fork vfork
+
+					
+pipes:
+			read[0]				write[0]
+				------------------------->
+			write[1]			read[1]
+
+half duplex:
+
+int fds[2];
+pipe(fds);
+id=fork();
+if{id==0}
+{
+	close fds[0];
+	write(fds[1],buf,strlen(buf));
+	scanf("%s",buf);
+}
+else
+{
+	close fds[1];
+	read(fd[0],buf,20)
+	printf("%s",buf);
+
+}
+
+
+*********************************
+named pipes:
+			client--------->srvfifo-------->server--->
+
+			client<---------clififo<--------server(toogle)<----
+
+
+srvfd=open("srvfifo",O_creat|0642);			srvfd=open("clififo",0642);
+if(fd<0)						write(srvfd,buf,strlenbuf);
+	error;						scanf("%s",buf);
+mkfifo("srvfifo",0642);
+read(srvfd,buf,20);
+toogle:
+								mkfifo("clififo",0642
+								srvfd=open("clififo",O_RDONLY);
+clifd=open("clififo",O_WRONLY);
+printf("%s\n",srvbuf);
+if(clifd>0)
+{
+	printf("opended suucessfully\n");
+	
+}
+write(clifd,srvbuf,srvfd);
+printf("sending response")
+
+								read(clifd,srvbuf,20);
+								printf("%s\n",srvbuf);
+								printf("response of serer\n");
+
+
+
+
+********************************************************
+
+msq queue:
+
+assoactiated wit key
+
+main()
+{
+int msgid;
+char rxmsg[20],txmsg[20];
+msgid=msgget(KEY,0642|IPC_CREAT);
+if(msgid<0)
+{
+
+printf("no msgqueue\n");
+return 1;
+}
+else
+{
+
+printf("opened msgqueue %d\n",msgid);
+}
+msgrcv(msgid,rxmsg,20,SRV_MSG_TYPE,NULL);
+memcpy(txmsg,rxmsg+4,4+strlen(txmsg+4)+1);
+msgsnd(msgid,txmsg,4+strlen(txmsg+4)+1,NULL);
+
+}
+
+****
+cli
+main()
+{
+
+int msgid,*msghdr;
+char rxmsg[20],txmsg[20];
+msgid=msgget(KEY,0);
+msgsnd(msgid,txmsg,8+strlen(txmsg+8),NULL);;
+msghdr[0]=SRV_MSG_TYPE;
+msghdr[1]=getpid();
+scanf("%s",txmsg);
+msgsnd(msgid,txmsg,8+strlen(txmsg+8),NULL);
+msgrcv(msgid,rxmsg,20,getpid,NULL);
+printf("%s",rxmsg+4);
+
+
+
+
+}
+**************************************************************
+
+
+
+semaphores:
+server::
+#include<stdio.h>
+#include<fcntl.h>
+#include<unistd.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/types.h>
+#include <sys/sem.h>
+
+#define KEY 192112
+void togglecase(char *addr);
+main()
+{
+	int semid,shmid;
+	struct sembuf *smop;
+	
+	char *addr;
+	shmid=shmget(KEY,512,IPC_CREAT|0660);
+	addr=shmat(shmid,NULL,0);
+	semid=semget(KEY,1,IPC_CREAT|0660);
+	semctl(semid,0,SETVAL,0);
+	semctl(semid,1,SETVAL,0);
+	smop[0].sem_num=0;
+	smop[0].sem_op=-1;
+	//smop[0].sem_flags=0;
+	semop(semid,&smop,1);
+	printf("%s",addr);
+	togglecase(addr+256);
+	smop[1].sem_num=1;
+	smop[1].sem_op=1;
+	//[1].sem_flag=0;
+	semop(semid,&smop,1);
+
+}
+void togglecase(char *addr)
+{
+
+	int i;
+	for(i=0;i<strlen(addr);i++)
+	{
+		if(isupper(addr[i]))
+			addr[i]=tolower(addr[i]);
+		else
+		addr[i]=toupper(addr[i]);
+
+
+	}
+
+
+}
+						
+
+***********
+#include<stdio.h>
+#include<fcntl.h>
+#include<unistd.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+#include <sys/types.h>
+#include <sys/sem.h>
+
+#define KEY 192112
+main()
+{
+	int semid,shmid;
+	struct sembuf *smop;
+	char *addr;
+	shmid=shmget(KEY,512,0);
+	addr=shmat(shmid,NULL,0);
+	semid=semget(KEY,2,0);
+	scanf("%s",addr);
+	
+	smop[0].sem_num=0;
+	smop[0].sem_op=+1;
+	//[0].sem_flags=1;
+	semop(semid,&smop[0],1);
+	smop[1].sem_num=1;
+	smop[1].sem_op=-1;
+	//smop[1].sem_flag=1;
+	semop(semid,&smop,1);
+	printf("%s",addr+256);
+}
+
+
+
+**********************************
+
+#include<stdio.h>
+#include<pthread.h>
+pthread_mutex_t mtx;
+
+void threadfun1(void *args);
+void threadfun2(void *args);
+int glob=0;
+main()
+{
+int res;
+int loop=1000;
+pthread_t tid1,tid2;
+pthread_create(&tid1,NULL,threadfun1,&loop);
+pthread_create(&tid2,NULL,threadfun2,&loop);
+pthread_create(&tid1,NULL,threadfun1,&loop);
+pthread_create(&tid2,NULL,threadfun2,&loop);
+pthread_join(tid1,&res);
+pthread_join(tid2,&res);
+pthread_join(tid1,&res);
+pthread_join(tid2,&res);
+printf("%d",glob);
+}
+
+void threadfun1(void *args)
+{
+	int i,loop,loc;
+	loop=(*(int *)args);
+	pthread_mutex_lock(&mtx);
+	for(i=0;i<loop;i++)
+	{
+
+		loc=glob;
+		loc++;
+		glob=loc;
+
+	}
+pthread_mutex_unlock(&mtx);
+}
+
+void threadfun2(void *args)
+{
+	int i,loop,loc;
+	loop=(*(int *)args);
+	pthread_mutex_lock(&mtx);
+		
+	for(i=0;i<loop;i++)
+	{
+
+		loc=glob;
+		loc++;
+		glob=loc;
+
+	}
+	pthread_mutex_unlock(&mtx);
+	
+}
+**********************************
+
+
+
+signal:
+
+
+/*signals are software interrupts,some of the senarios signals are use:
+1.combination multiple keywords
+2.kernel gwnerate signal and sens to process.
+3.process send signal to another process.
+4.kenl genates signal for some events..
+kill-l-->to see signal info 64 signal
+
+signal and sigaction we are gng to generaete siganl,
+*signal and sigaction(befre gng to signal depostion table it check wether signal  mask is block are not)
+
+ps-ef-->we will get pid,
+ps-es->staus info
+cd /proc/pid/cat status.
+
+*signal mask
+*pending signal info
+
+*/
+#include<stdio.h>
+#include<unistd.h>
+#include<signal.h>
+mysighandler(int signal)
+{
+	printf("handdler\n");
+	sleep(10);
+}
+main()
+{
+
+	signal(2,mysighandler);
+	while(1)
+	{
+		printf("signal\n");
+		sleep(5);
+
+	}
+
+
+
+};
+
+
+sigaction:
+
+
+#include<stdio.h>
+#include<signal.h>
+#include<unistd.h>
+mysighandler(int signal)
+{
+	printf("handler\n");
+	sleep(10);
+}
+
+main()
+{
+	struct sigaction act;
+	act.sa_handler=mysighandler;
+	act.sa_flags=0;
+	sigemptyset(&act.sa_mask);
+	
+	sigaddset(&act.sa_mask,3);
+	sigaction(2,&act,NULL);
+	while(1)
+	{
+		printf("signal\n");
+		sleep(5);
+
+
+	}
+
+
+
+
+}
+******************************************
+
+
+ARM MODES:
+
+
+USER,SYSTEM FIQ,IRQ.SUPERVISOR,ABORT,UNDEFINED
+
+
+
+
+USER RO-R12 AND RA15 ARE GENAREAL PURPOSE
+SPCR REGISTER->
+
+CPSR--->SPCR-->LINK REGISTER-->
+CPSR<----LINK REISTER<-----SPSR
+
+32   31  30  29  28           7  6  5  4   3   2     1   0
+n    z    c   v  q            I  F  T  m4  m3  m2   m1   m0
+
+RESET------------>0X00000000
+UNDEF------------>0X00000004
+S/W IT------------>0X0000008
+PREFET ABORT------>0X000000C
+DATA ABORT-------->0X0000010
+RESERVED---------->0X0000014
+IRQ--------------->0X0000018
+FIRQ-------------->0X000001C
+
+**************************************
+
+
+
+i2c protocal:
+
+
+
+start-->scl high and sdl should be high to low
+stop--->scl high and sdl should be low to high
+maser starts clock and send bacse address to slave .depend on slave base address it goes to slave and salve sends the acknowledgement
+rd/wd data a has done
+
+
+
+spi protocal:
+master staet clock mosi to miso
+salveselect/chip selcet sect the slave tx and rx of data is done
+**********************
+
+
+
+Q. Why do we need two bootloaders viz. primary and secondary?
+ANS:
+When the system starts the BootROM has no idea about the external RAM. It can only access the Internal RAM of the the CPU. So the BootROM loads the primary bootloader from the boot media (flash memory) into the internal RAM. The main job of the primary bootloader is to detect the external RAM and load the secondary bootloader into it. After this, the secondary bootloader starts its execution.
+
+-*********************************
+
+2. When bootloader is finished it's job where is the first location and what is the first process that gets executed in Linux kernel?Abs:
+Ans:
+
+1.BIOS(basic i/p and o/p and runs MBR)
+2.MBR(master boot record and runs grub)
+3.GRUB(grub initialisation)
+4.KERNEL(kernel execution and runs init)
+5.INIT(initilisatiom)
+6.RUN LEVEL
+
+**************************
+
+How to Pass Command Line Arguments to a Kernel Module?
+
+modulr_param(name of var,data,peermissions)
+
+
+***************************
+top halves and botton halves are used for 
+->reduce the time between interrupt execution
+->dont want to keep interuupt line busy
+Tophalves:
+
+1.check the interrupt pending or not
+2.tpy of interrupt
+
+bottom halves:
+execution of interuuor
+
+
+1.tasklets
+2.softirq
+3.worki queues
+
+
+
+tasklets:
+create dynamically
+1.interrupt mechanish
+2.scheduled
+3.no sleep.
+4.easy to use and simple to interface.
+5.work time is not critical
+
+
+workques:
+1.process context
+2.sleep
+3.schedfuled
+4.run simulataneous on diff cpu cores
+
+
+softirq:
+1.interrupt context
+2.no sleep
+3.notscheduled
+4.run on diff cpu cores
+
+***********************************************
+system booting process:
+1.bios
+2.mrb
+3.grub
+4.kernel
+5.init
+6.run time
+
+board booting process
+1.Boot rom(basic periheral initilisation cpu,memory,clk)
+2.xloader(path sd card boothloadr,mol)
+3.uboot(kernal panics,console)
+4.kernel(rootfs)
+*********************************
+
+
+
+

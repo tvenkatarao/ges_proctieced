@@ -1,0 +1,23 @@
+
+
+No. of Rounds = 2
+Mode : F2F
+
+
+1) Brief me about yourself
+2) Project details whatever you have done
+3) Architecture of the drivers used in the project (like  I2C Linux stack)
+4) I2C protocol detailed description
+5) Kernel building steps
+6) What is the role of Kconfig
+7) Where is the selected configs saved
+8) Adding the new driver static aswell as dynamic
+9) What is the role of Probe in a any driver and who calls probe
+10) Procedure of initialization of static as well as module driver
+11) what kind of work was done inthe last project
+12) Design a circular linked list
+
+
+
+
+

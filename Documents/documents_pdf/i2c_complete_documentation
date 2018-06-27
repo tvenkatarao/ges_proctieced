@@ -1,0 +1,123 @@
+------------------------------------------------
+1. Flashing the SD Card with raspberian image.
+------------------------------------------------
+
+Image can be found here:
+ftp://172.16.2.4/Linux/Raspbian/
+or
+https://www.raspberrypi.org/downloads/raspbian/
+
+Flash using etcher:
+
+Visit etcher.io and download and install the Etcher SD card image utility.
+
+Run Etcher and select the Raspbian image you unzipped on your computer or laptop.
+
+Select the SD card drive. Note that the software may have already selected the right drive.
+
+Finally, click Burn to transfer Raspbian to the SD card. You'll see a progress bar that tells you how much is left to do. 
+
+Once complete, the utility will automatically eject/unmount the SD card so it's safe to remove it from the computer.
+
+or refer this link:
+https://www.raspberrypi.org/learning/software-guide/quickstart/
+
+----------------------------------------------------
+2.Hardware setup:
+----------------------------------------------------
+
+https://www.raspberrypi.org/learning/hardware-guide/quickstart/
+
+---------------------------------------------------
+3.Cross-Compilation:
+---------------------------------------------------
+
+After successfull booting , to cross compile :
+
+https://www.raspberrypi.org/documentation/linux/kernel/building.md
+
+or follow these steps for 64-bit host system and rpi-3 board:
+
+git clone https://github.com/raspberrypi/tools ~/tools
+
+git clone --depth=1 https://github.com/raspberrypi/linux
+
+echo PATH=\$PATH:~/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin >> ~/.bashrc
+source ~/.bashrc
+
+cd linux
+KERNEL=kernel7
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- zImage modules dtbs
+
+Having built the kernel, you need to copy it onto your Raspberry Pi and install the modules; this is best done directly using an SD card reader.
+
+mkdir mnt
+mkdir mnt/fat32
+mkdir mnt/ext4
+sudo mount /dev/sdb1 mnt/fat32
+sudo mount /dev/sdb2 mnt/ext4
+
+Next, install the modules:
+
+sudo make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=mnt/ext4 modules_install
+
+Finally, copy the kernel and Device Tree blobs onto the SD card, making sure to back up your old kernel:
+
+sudo cp mnt/fat32/$KERNEL.img mnt/fat32/$KERNEL-backup.img
+sudo cp arch/arm/boot/zImage mnt/fat32/$KERNEL.img
+sudo cp arch/arm/boot/dts/*.dtb mnt/fat32/
+sudo cp arch/arm/boot/dts/overlays/*.dtb* mnt/fat32/overlays/
+sudo cp arch/arm/boot/dts/overlays/README mnt/fat32/overlays/
+sudo umount mnt/fat32
+sudo umount mnt/ext4
+
+Finally, plug the card into the Pi and boot it!
+
+-----------------------------------------------------------------------
+4.For DTS entry.
+-----------------------------------------------------------------------
+
+Search for the appropriate .dts file
+
+for rpi3b model -- bcm2710-rpi-3-b.dts
+
+Make the changes:
+
+&i2c1 {
+        pinctrl-names = "default";
+        pinctrl-0 = <&i2c1_pins>;
+        clock-frequency = <100000>;
+
+        i2cdev1: rtc@68{
+                compatible = "my_rtc";
+                reg = <0x68>;
+        };
+
+};
+
+and compile .dts file using below commands:
+
+IDE=<your-device-name>
+SRC=$IDE.dts
+TMP=$IDE.tmp.dts
+DST=$IDE.dtb
+
+cpp -nostdinc -I include -undef -x assembler-with-cpp $SRC > $TMP
+dtc -O dtb -b 0 -o $DST $TMP
+rm $TMP
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

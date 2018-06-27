@@ -1,0 +1,201 @@
+venkata@venkata:~$ ping 172.16.9.90
+connect: Network is unreachable
+venkata@venkata:~$ ping 172.16.9.90
+connect: Network is unreachable
+venkata@venkata:~$ ping 172.16.9.90
+PING 172.16.9.90 (172.16.9.90) 56(84) bytes of data.
+From 172.16.9.123 icmp_seq=1 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=2 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=3 Destination Host Unreachable
+^C
+--- 172.16.9.90 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5023ms
+pipe 3
+venkata@venkata:~$ ping 172.16.9.90
+connect: Network is unreachable
+venkata@venkata:~$ ping 172.16.9.90
+connect: Network is unreachable
+venkata@venkata:~$ ping 172.16.9.90
+connect: Network is unreachable
+venkata@venkata:~$ ping 172.16.9.90
+PING 172.16.9.90 (172.16.9.90) 56(84) bytes of data.
+From 172.16.9.123 icmp_seq=1 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=2 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=3 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=4 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=5 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=6 Destination Host Unreachable
+^C
+--- 172.16.9.90 ping statistics ---
+7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6023ms
+pipe 3
+venkata@venkata:~$ ping 172.16.9.90
+PING 172.16.9.90 (172.16.9.90) 56(84) bytes of data.
+From 172.16.9.123 icmp_seq=1 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=2 Destination Host Unreachable
+From 172.16.9.123 icmp_seq=3 Destination Host Unreachable
+^C
+--- 172.16.9.90 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5014ms
+pipe 3
+venkata@venkata:~$ 
+venkata@venkata:~$ ssh pi@172.16.9.90
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+6e:a9:d3:c1:8c:98:11:28:bb:cf:c0:ed:58:08:19:05.
+Please contact your system administrator.
+Add correct host key in /home/venkata/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/venkata/.ssh/known_hosts:2
+  remove with: ssh-keygen -f "/home/venkata/.ssh/known_hosts" -R 172.16.9.90
+ECDSA host key for 172.16.9.90 has changed and you have requested strict checking.
+Host key verification failed.
+venkata@venkata:~$ ssh pi@172.16.9.90
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+6e:a9:d3:c1:8c:98:11:28:bb:cf:c0:ed:58:08:19:05.
+Please contact your system administrator.
+Add correct host key in /home/venkata/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/venkata/.ssh/known_hosts:2
+  remove with: ssh-keygen -f "/home/venkata/.ssh/known_hosts" -R 172.16.9.90
+ECDSA host key for 172.16.9.90 has changed and you have requested strict checking.
+Host key verification failed.
+venkata@venkata:~$ cd /home/venkata/
+venkata@venkata:~$ ls
+a.out                                             Desktop                         META-INF           raspberrypi   tvr_module
+basic.c                                           Documents                       mimetype           raspi         Untitled 1.odp
+bbblinux                                          Downloads                       MM Frame work.odp  sample.2      Untitled Document 1
+Best Practices for Android Audio.mp4              etcher-1.1.2-x86_64.AppImage    mnt                sample.cpp    venki
+bin                                               examples.desktop                module             sample.cpp~   Videos
+bone-debian-9.1-lxqt-armhf-2017-08-31-4gb.img.xz  goal.pdf                        module_char        settings.xml  WORKING_DIRECTORY
+Configurations2                                   ip address set file.odt         Music              styles.xml
+content.xml                                       ip and mac addres of my pc.odt  Pictures           Templates
+c_prm                                             linux                           practice           Thumbnails
+c_test                                            linux1                          Public             tools
+venkata@venkata:~$ ping 172.16.9.90
+PING 172.16.9.90 (172.16.9.90) 56(84) bytes of data.
+64 bytes from 172.16.9.90: icmp_seq=1 ttl=64 time=0.424 ms
+64 bytes from 172.16.9.90: icmp_seq=2 ttl=64 time=0.470 ms
+64 bytes from 172.16.9.90: icmp_seq=3 ttl=64 time=0.419 ms
+64 bytes from 172.16.9.90: icmp_seq=4 ttl=64 time=0.469 ms
+64 bytes from 172.16.9.90: icmp_seq=5 ttl=64 time=0.418 ms
+^C
+--- 172.16.9.90 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4002ms
+rtt min/avg/max/mdev = 0.418/0.440/0.470/0.024 ms
+venkata@venkata:~$ ssh pi@172.16.9.90
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+6e:a9:d3:c1:8c:98:11:28:bb:cf:c0:ed:58:08:19:05.
+Please contact your system administrator.
+Add correct host key in /home/venkata/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/venkata/.ssh/known_hosts:2
+  remove with: ssh-keygen -f "/home/venkata/.ssh/known_hosts" -R 172.16.9.90
+ECDSA host key for 172.16.9.90 has changed and you have requested strict checking.
+Host key verification failed.
+venkata@venkata:~$ cd /home/venkata/
+venkata@venkata:~$ cd /home/venkata/
+venkata@venkata:~$ cd /home/venkata/
+venkata@venkata:~$ ls
+a.out                                             Desktop                         META-INF           raspberrypi   tvr_module
+basic.c                                           Documents                       mimetype           raspi         Untitled 1.odp
+bbblinux                                          Downloads                       MM Frame work.odp  sample.2      Untitled Document 1
+Best Practices for Android Audio.mp4              etcher-1.1.2-x86_64.AppImage    mnt                sample.cpp    venki
+bin                                               examples.desktop                module             sample.cpp~   Videos
+bone-debian-9.1-lxqt-armhf-2017-08-31-4gb.img.xz  goal.pdf                        module_char        settings.xml  WORKING_DIRECTORY
+Configurations2                                   ip address set file.odt         Music              styles.xml
+content.xml                                       ip and mac addres of my pc.odt  Pictures           Templates
+c_prm                                             linux                           practice           Thumbnails
+c_test                                            linux1                          Public             tools
+venkata@venkata:~$ ./ssh
+bash: ./ssh: No such file or directory
+venkata@venkata:~$ vim .ssh
+venkata@venkata:~$ vim .ssh
+venkata@venkata:~$ ssh-keygen -f /home/venkata/.ssh/
+Generating public/private rsa key pair.
+/home/venkata/.ssh/ already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+open /home/venkata/.ssh/ failed: Is a directory.
+Saving the key failed: /home/venkata/.ssh/.
+venkata@venkata:~$ 
+venkata@venkata:~$ ssh-keygen -f /home/venkata/.ssh/known_hosts 
+Generating public/private rsa key pair.
+/home/venkata/.ssh/known_hosts already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/venkata/.ssh/known_hosts.
+Your public key has been saved in /home/venkata/.ssh/known_hosts.pub.
+The key fingerprint is:
+36:66:75:ff:71:23:54:b3:99:1d:4b:b6:05:a0:20:00 venkata@venkata
+The key's randomart image is:
++--[ RSA 2048]----+
+|  E.... .   ...B.|
+|       . . .  + @|
+|          o .. *.|
+|         . ...   |
+|        S    ..o.|
+|       + .    ..+|
+|                .|
+|                 |
+|                 |
++-----------------+
+venkata@venkata:~$ 
+venkata@venkata:~$ ping 172.16.9.90
+PING 172.16.9.90 (172.16.9.90) 56(84) bytes of data.
+64 bytes from 172.16.9.90: icmp_seq=1 ttl=64 time=0.430 ms
+64 bytes from 172.16.9.90: icmp_seq=2 ttl=64 time=0.437 ms
+64 bytes from 172.16.9.90: icmp_seq=3 ttl=64 time=0.417 ms
+^C
+--- 172.16.9.90 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1998ms
+rtt min/avg/max/mdev = 0.417/0.428/0.437/0.008 ms
+venkata@venkata:~$ ssh pi@172.16.9.90
+The authenticity of host '172.16.9.90 (172.16.9.90)' can't be established.
+ECDSA key fingerprint is 6e:a9:d3:c1:8c:98:11:28:bb:cf:c0:ed:58:08:19:05.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '172.16.9.90' (ECDSA) to the list of known hosts.
+pi@172.16.9.90's password: 
+Linux raspberrypi 4.9.64-v7+ #1 SMP Thu Nov 30 02:00:53 IST 2017 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Sep  7 18:17:25 2017
+
+SSH is enabled and the default password for the 'pi' user has not been changed.
+This is a security risk - please login as the 'pi' user and type 'passwd' to set a new password.
+
+pi@raspberrypi:~ $ 
+
+
+
+
+
+
+
+
+
+
+
+
+
