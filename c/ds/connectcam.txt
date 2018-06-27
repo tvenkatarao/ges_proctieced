@@ -1,0 +1,164 @@
+[ 1621.920071] usb 3-8: new high-speed USB device number 5 using xhci_hcd
+[ 1622.048153] usb 3-8: New USB device found, idVendor=046d, idProduct=0839
+[ 1622.048163] usb 3-8: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[ 1622.048169] usb 3-8: Product: USB 2.0 Hub [MTT]
+[ 1622.048761] hub 3-8:1.0: USB hub found
+[ 1622.048801] hub 3-8:1.0: 4 ports detected
+[ 1622.319713] usb 3-8.1: new high-speed USB device number 6 using xhci_hcd
+[ 1622.409854] usb 3-8.1: New USB device found, idVendor=046d, idProduct=0837
+[ 1622.409863] usb 3-8.1: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[ 1622.409868] usb 3-8.1: Product: BCC950 ConferenceCam
+[ 1622.410498] 
+[ 1622.410498] UVC_DRIVER--pro--->drivers/media/usb/uvc/uvc_driver.c:1859 - uvc_probe
+[ 1622.410509] drivers/media/usb/uvc/uvc_driver.c:1196 - uvc_parse_control
+[ 1622.410512] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410517] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410521] drivers/media/usb/uvc/uvc_driver.c:574 - uvc_parse_streaming
+[ 1622.410528] drivers/media/usb/uvc/uvc_driver.c:332 - uvc_parse_format
+[ 1622.410535] 
+[ 1622.410535] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:181 - uvc_colorspace
+[ 1622.410540] drivers/media/usb/uvc/uvc_driver.c:332 - uvc_parse_format
+[ 1622.410545] 
+[ 1622.410545] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:181 - uvc_colorspace
+[ 1622.410550] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410554] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410559] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410563] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410568] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410572] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410577] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410580] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410586] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410589] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410593] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410597] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410601] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410605] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410610] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410613] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410617] drivers/media/usb/uvc/uvc_driver.c:864 - uvc_parse_vendor_control
+[ 1622.410621] drivers/media/usb/uvc/uvc_driver.c:943 - uvc_parse_standard_control
+[ 1622.410627] uvcvideo: Found UVC 1.00 device BCC950 ConferenceCam (046d:0837)
+[ 1622.410788] 
+[ 1622.410788] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410797] 
+[ 1622.410797] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410803] 
+[ 1622.410803] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410809] 
+[ 1622.410809] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410814] 
+[ 1622.410814] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410821] 
+[ 1622.410821] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410826] 
+[ 1622.410826] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410831] 
+[ 1622.410831] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410836] 
+[ 1622.410836] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410840] 
+[ 1622.410840] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410845] 
+[ 1622.410845] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410850] 
+[ 1622.410850] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410855] 
+[ 1622.410855] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410859] 
+[ 1622.410859] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410864] 
+[ 1622.410864] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410869] 
+[ 1622.410869] drivers/media/usb/uvc/uvc_ctrl.c:1842 - uvc_ctrl_add_info
+[ 1622.410878] 
+[ 1622.410878] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:1577 - uvc_scan_device
+[ 1622.410881] 
+[ 1622.410881] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:1499 - uvc_scan_chain
+[ 1622.410884] drivers/media/usb/uvc/uvc_driver.c:1275 - uvc_scan_chain_entity
+[ 1622.410886] drivers/media/usb/uvc/uvc_driver.c:1359 - uvc_scan_chain_forward
+[ 1622.410889] drivers/media/usb/uvc/uvc_driver.c:1424 - uvc_scan_chain_backward
+[ 1622.410891] drivers/media/usb/uvc/uvc_driver.c:1275 - uvc_scan_chain_entity
+[ 1622.410893] drivers/media/usb/uvc/uvc_driver.c:1359 - uvc_scan_chain_forward
+[ 1622.410896] drivers/media/usb/uvc/uvc_driver.c:1424 - uvc_scan_chain_backward
+[ 1622.410898] drivers/media/usb/uvc/uvc_driver.c:1275 - uvc_scan_chain_entity
+[ 1622.410900] drivers/media/usb/uvc/uvc_driver.c:1359 - uvc_scan_chain_forward
+[ 1622.410903] drivers/media/usb/uvc/uvc_driver.c:1424 - uvc_scan_chain_backward
+[ 1622.410905] 
+[ 1622.410905] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:1831 - uvc_register_chains
+[ 1622.410908] 
+[ 1622.410908] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:1802 - uvc_register_terms
+[ 1622.410911] 
+[ 1622.410911] UVC_DRIVER--->drivers/media/usb/uvc/uvc_driver.c:1736 - uvc_register_video
+[ 1622.410992] 
+[ 1622.410992] --->drivers/media/usb/uvc/uvc_video.c:163 - uvc_get_video_ctrl
+[ 1622.411085] 
+[ 1622.411085] --->drivers/media/usb/uvc/uvc_video.c:93 - uvc_fixup_video_ctrl
+[ 1622.411088] 
+[ 1622.411088] --->drivers/media/usb/uvc/uvc_video.c:252 - uvc_set_video_ctrl
+[ 1622.411174] 
+[ 1622.411174] --->drivers/media/usb/uvc/uvc_video.c:163 - uvc_get_video_ctrl
+[ 1622.411216] 
+[ 1622.411216] --->drivers/media/usb/uvc/uvc_video.c:93 - uvc_fixup_video_ctrl
+[ 1622.411306] 
+[ 1622.411306] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:109 - uvc_mc_register_entities
+[ 1622.411309] 
+[ 1622.411309] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411312] 
+[ 1622.411312] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411315] 
+[ 1622.411315] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411318] 
+[ 1622.411318] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411321] 
+[ 1622.411321] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411324] 
+[ 1622.411324] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411327] 
+[ 1622.411327] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411330] 
+[ 1622.411330] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411332] 
+[ 1622.411332] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:86 - uvc_mc_init_entity
+[ 1622.411335] 
+[ 1622.411335] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411339] 
+[ 1622.411339] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411342] 
+[ 1622.411342] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411346] 
+[ 1622.411346] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411348] 
+[ 1622.411348] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411351] 
+[ 1622.411351] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411354] 
+[ 1622.411354] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411357] 
+[ 1622.411357] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411360] 
+[ 1622.411360] UVC_ent--->drivers/media/usb/uvc/uvc_entity.c:29 - uvc_mc_register_entity
+[ 1622.411364] drivers/media/usb/uvc/uvc_status.c:170 - uvc_status_init
+[ 1622.411366] drivers/media/usb/uvc/uvc_status.c:28 - uvc_input_init
+[ 1622.411433] input: BCC950 ConferenceCam as /devices/pci0000:00/0000:00:14.0/usb3/3-8/3-8.1/3-8.1:1.0/input/input9
+[ 1622.412309] input: BCC950 ConferenceCam as /devices/pci0000:00/0000:00:14.0/usb3/3-8/3-8.1/3-8.1:1.2/0003:046D:0837.0003/input/input10
+[ 1622.412497] hid-generic 0003:046D:0837.0003: input,hidraw0: USB HID v1.11 Device [BCC950 ConferenceCam] on usb-0000:00:14.0-8.1/input2
+[ 1622.430824] 
+[ 1622.430824] UVC_v4l2--->drivers/media/usb/uvc/uvc_v4l2.c:487 - uvc_v4l2_open
+[ 1622.430833] drivers/media/usb/uvc/uvc_status.c:218 - uvc_status_start
+[ 1622.430846] 
+[ 1622.430846] UVC_v4l2--->drivers/media/usb/uvc/uvc_v4l2.c:565 - uvc_v4l2_do_ioctl
+[ 1622.430873] 
+[ 1622.430873] UVC_v4l2--->drivers/media/usb/uvc/uvc_v4l2.c:535 - uvc_v4l2_release
+[ 1622.430875] 
+[ 1622.430875] UVC_v4l2--->drivers/media/usb/uvc/uvc_v4l2.c:477 - uvc_has_privileges
+[ 1622.430877] drivers/media/usb/uvc/uvc_status.c:227 - uvc_status_stop
+[ 1622.430899] drivers/media/usb/uvc/uvc_status.c:121 - uvc_status_complete
+[ 1622.695368] usb 3-8.3: new full-speed USB device number 7 using xhci_hcd
+[ 1622.997916] usb 3-8.3: New USB device found, idVendor=046d, idProduct=0838
+[ 1622.997919] usb 3-8.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 1622.997920] usb 3-8.3: Product: BCC950 ConferenceCam
+[ 1622.997921] usb 3-8.3: Manufacturer: Logitech
+[ 1622.997922] usb 3-8.3: SerialNumber: 8F216802
+[ 1623.170738] input: Logitech BCC950 ConferenceCam as /devices/pci0000:00/0000:00:14.0/usb3/3-8/3-8.3/3-8.3:1.3/0003:046D:0838.0004/input/input11
+[ 1623.170979] hid-generic 0003:046D:0838.0004: input,hiddev0,hidraw1: USB HID v1.00 Device [Logitech BCC950 ConferenceCam] on usb-0000:00:14.0-8.3/input3

@@ -1,0 +1,31 @@
+#include<stdio.h>
+int divi(int n)
+{
+
+	if(n<0) 
+		n=-n;
+	else if(n ==0)
+		return 1;
+	while(n>3)
+	{
+		int sum = 0;
+		while(n > 0)
+		{
+			sum += n & 3;
+			n >>= 2;
+		}
+		n = sum;
+	}
+	return n == 3;
+}
+int main()
+{
+	int num;
+	printf("enter the number ..:\n");
+	scanf("%d",&num);
+
+	int res = divi(num);
+	if(res == 1)
+		printf("num is divisible by 3...:\n");
+	else printf("num is not divisible by 3...:\n");
+}

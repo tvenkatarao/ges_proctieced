@@ -1,0 +1,41 @@
+#include<stdio.h>
+int (*funp)(char *,...);
+
+void str_fun(char *p,char *q,int len)
+{
+	int i=len-1,j;
+while(*p++);
+
+printf("after concatination :%s\n",*p); 
+//	for(j=0;q[j]!='\0';j++)
+	for(;q!='\0';q++)
+	{
+//		p[i++]=*q;
+		*p++=*q;
+	}
+	p[i]='\0';
+
+printf("after concatination :%s\n",*p); 
+	return; 
+}
+
+int main()
+{
+
+	char s1[20],s2[20];
+	printf("enter the string one:");
+	scanf("%[^\n]",s1);
+
+	printf("\nenter the string TWO:");
+	scanf("%s",s2);
+
+int len=sizeof(s1)/sizeof(s1[0]);
+
+
+	funp=str_fun;
+	funp(s1,s2, len);
+printf("after concatination :%s\n",s1); 
+
+	return 0;
+
+}

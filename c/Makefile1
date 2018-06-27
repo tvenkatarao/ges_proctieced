@@ -1,0 +1,15 @@
+all: mypro
+# which compiler
+CC = gcc
+# where are include files kept
+INCLUDE = .
+# options for development
+CFLAGS = -g -Wall -ansi
+#options for release
+CFLAGS = -O -Wall -ansi
+
+
+mypro: read.o demo_rwc.o
+	$(CC) -O mypro read.o demo_rwc.o
+
+
