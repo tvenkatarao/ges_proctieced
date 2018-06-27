@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+GCC	Makefile	/^GCC := $(COMPILER)gcc $/;"	m
+INCLUDE	Makefile	/^INCLUDE := -I ..\/..\/header\/$/;"	m
+SOURCE	Makefile	/^SOURCE  := $(wildcard *.c)$/;"	m
+bcd2bin	set_time.c	/^unsigned char bcd2bin (unsigned char bcdByte)                                              $/;"	f
+bin2bcd	set_time.c	/^unsigned char  bin2bcd (unsigned char decimalByte)                                          $/;"	f
+input	input.c	/^unsigned char input (void)$/;"	f
+main	app_i2c_rtc_main.c	/^int main (void)$/;"	f
+read_date_time	read_date_time.c	/^void read_date_time(int fd)$/;"	f
+set_date	set_date.c	/^void set_date (unsigned char time_buff[], int size)$/;"	f
+set_day	set_day.c	/^void set_day(unsigned char time_buff[], int index)$/;"	f
+set_time	set_time.c	/^void set_time (unsigned char time_buff[], int size)$/;"	f
+set_time_date	set_time_date.c	/^void set_time_date (int fd)$/;"	f

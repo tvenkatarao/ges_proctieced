@@ -1,0 +1,8 @@
+obj-m:= i2c_rtc.o                                                                     
+
+all:                                                                            
+	make ARCH=arm CROSS_COMPILE=$(COMPILER) -C /home/jagadeesh/linux-rpi-4.4.y M=$(shell pwd) modules
+	@cp i2c_rtc.ko ../../
+clean:
+	make ARCH=arm CROSS_COMPILE=$(COMPILER) -C /home/jagadeesh/linux-rpi-4.4.y M=$(shell pwd) clean
+	@rm ../../i2c_rtc.ko

@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+END_REG_IDX	i2c_rtc.c	33;"	d	file:
+FIRST_MINOR	i2c_rtc.c	29;"	d	file:
+KDIR	Makefile	/^KDIR:=\/home\/jagadeesh\/linux-rpi-4.4.y$/;"	m
+NR_DEVS	i2c_rtc.c	30;"	d	file:
+N_REGISTER	i2c_rtc.c	31;"	d	file:
+PWD	Makefile	/^PWD:=$(shell pwd)$/;"	m
+RTC_CONTROL_REG	i2c_rtc.c	45;"	d	file:
+RTC_HOURS_REG	i2c_rtc.c	40;"	d	file:
+RTC_MDAY_REG	i2c_rtc.c	42;"	d	file:
+RTC_MINUTES_REG	i2c_rtc.c	39;"	d	file:
+RTC_MONTH_REG	i2c_rtc.c	43;"	d	file:
+RTC_SECONDS_REG	i2c_rtc.c	38;"	d	file:
+RTC_WDAY_REG	i2c_rtc.c	41;"	d	file:
+RTC_YEAR_REG	i2c_rtc.c	44;"	d	file:
+START_REG_IDX	i2c_rtc.c	32;"	d	file:
+client	i2c_rtc.c	/^	struct i2c_client 	*client;$/;"	m	struct:i2c_rtc_device	typeref:struct:i2c_rtc_device::i2c_client	file:
+date	i2c_rtc.c	/^	unsigned char date;$/;"	m	struct:time	file:
+day	i2c_rtc.c	/^	unsigned char day;$/;"	m	struct:time	file:
+devname	i2c_rtc.c	/^char *devname = "i2c_rtc";$/;"	v
+fops	i2c_rtc.c	/^struct file_operations fops = {$/;"	v	typeref:struct:file_operations
+hour	i2c_rtc.c	/^	unsigned char hour;$/;"	m	struct:time	file:
+i2c_rtc_device	i2c_rtc.c	/^struct i2c_rtc_device {$/;"	s	file:
+i2c_rtc_device	i2c_rtc.c	/^}i2c_rtc_device;$/;"	v	typeref:struct:i2c_rtc_device
+i2c_rtc_get_reg	i2c_rtc.c	/^static unsigned char i2c_rtc_get_reg (unsigned char *buff, unsigned char len,$/;"	f	file:
+i2c_rtc_id	i2c_rtc.c	/^static const struct i2c_device_id i2c_rtc_id[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+i2c_rtc_probe	i2c_rtc.c	/^static int i2c_rtc_probe(struct i2c_client *client,	const struct $/;"	f	file:
+i2c_rtc_remove	i2c_rtc.c	/^static int i2c_rtc_remove (struct i2c_client *client)$/;"	f	file:
+i2c_rtc_setup	i2c_rtc.c	/^static int i2c_rtc_setup (void)$/;"	f	file:
+majNo	i2c_rtc.c	/^int majNo;$/;"	v
+minute	i2c_rtc.c	/^	unsigned char minute;$/;"	m	struct:time	file:
+month	i2c_rtc.c	/^	unsigned char month;$/;"	m	struct:time	file:
+myExit	i2c_rtc.c	/^module_exit (myExit);$/;"	v
+myExit	i2c_rtc.c	/^static void myExit (void)$/;"	f	file:
+myInit	i2c_rtc.c	/^module_init (myInit);$/;"	v
+myInit	i2c_rtc.c	/^static int __init myInit (void)$/;"	f	file:
+myOpen	i2c_rtc.c	/^int myOpen (struct inode *inode, struct file *filep)$/;"	f
+myRelease	i2c_rtc.c	/^int myRelease (struct inode *in, struct file *fp)$/;"	f
+my_cdev	i2c_rtc.c	/^struct cdev *my_cdev;$/;"	v	typeref:struct:cdev
+mychar_class	i2c_rtc.c	/^static struct class *mychar_class;$/;"	v	typeref:struct:class	file:
+mychar_device	i2c_rtc.c	/^static struct device *mychar_device;$/;"	v	typeref:struct:device	file:
+mydev	i2c_rtc.c	/^static dev_t mydev;$/;"	v	file:
+myread	i2c_rtc.c	/^ssize_t myread (struct file *filp, char __user *buf, size_t count, $/;"	f
+mywrite	i2c_rtc.c	/^ssize_t mywrite (struct file *filp, const char __user *buf, size_t count, $/;"	f
+obj-m	Makefile	/^obj-m:=i2c_rtc.o$/;"	m
+rtc_address	i2c_rtc.c	/^	unsigned int	rtc_address;$/;"	m	struct:i2c_rtc_device	file:
+rtc_client_driver	i2c_rtc.c	/^static struct i2c_driver rtc_client_driver =  {$/;"	v	typeref:struct:i2c_driver	file:
+rtc_time	i2c_rtc.c	/^	struct time 	rtc_time;$/;"	m	struct:i2c_rtc_device	typeref:struct:i2c_rtc_device::time	file:
+second	i2c_rtc.c	/^	unsigned char second;$/;"	m	struct:time	file:
+time	i2c_rtc.c	/^struct time {$/;"	s	file:
+time_buff	i2c_rtc.c	/^	unsigned int	time_buff[8];$/;"	m	struct:i2c_rtc_device	file:
+year	i2c_rtc.c	/^	unsigned char year;$/;"	m	struct:time	file:
