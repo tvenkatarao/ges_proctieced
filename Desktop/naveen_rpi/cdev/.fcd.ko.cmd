@@ -1,0 +1,1 @@
+cmd_/home/venkata/Desktop/naveen_rpi/cdev/fcd.ko := /home/venkata/tools/arm-bcm2708/arm-bcm2708-linux-gnueabi/bin/arm-bcm2708-linux-gnueabi-ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/venkata/Desktop/naveen_rpi/cdev/fcd.ko /home/venkata/Desktop/naveen_rpi/cdev/fcd.o /home/venkata/Desktop/naveen_rpi/cdev/fcd.mod.o ;  true
