@@ -1,0 +1,7 @@
+#include<stdio.h>
+main()
+{
+	int b = 100;
+	static int c = 5 + b;
+	
+}
