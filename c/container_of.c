@@ -25,7 +25,7 @@ int main()
     if(obj == NULL){
         printf("Error: Memory not allocated...!\n");
     }
-//    obj->z.a = 51;
+    obj->z.a = 51;
     obj->b = 43;
     obj->c = 53;
 

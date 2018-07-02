@@ -14,8 +14,8 @@ printf("\n-----------------%d\n",y);
 }
 int main()
 {
-	int x=1515151515,y=3215151515;
-	printf("%d",add(x,y));
+	int x=5,y=5;
+	printf("%d\n",add(x,y));
 	return 0;
 
 
